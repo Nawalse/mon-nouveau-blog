@@ -4,6 +4,7 @@ from .models import Post
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
 from django.shortcuts import redirect
+import csv
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -39,3 +40,27 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+
+
+
+import os
+
+def books_by_category(request, category):
+    csv_file_name = f'{category}.csv'
+    csv_file_path = os.path.join(os.path.dirname(__file__), 'data', csv_file_name)
+    
+    # Logique pour lire le fichier CSV correspondant à la catégorie sélectionnée
+    # et récupérer les informations des livres
+    books = []
+    with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            books.append({
+                'name': row['name'],
+                'url': row['url'],
+                'image': row['image'],
+                'price': row['price']
+            })
+    
+    return render(request, 'blog/books_by_category.html', {'category': category, 'books': books})

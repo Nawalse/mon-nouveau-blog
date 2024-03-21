@@ -1,0 +1,17 @@
+<!-- blog/categories.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Categories</title>
+</head>
+<body>
+    <h1>Categories</h1>
+    <ul>
+        <li><a href="{% url 'books_by_category' 'histoire' %}">Histoire</a></li>
+        <li><a href="{% url 'books_by_category' 'developpement-personnel' %}">Développement personnel</a></li>
+        <li><a href="{% url 'books_by_category' 'livres-pour-enfants' %}">Livres pour enfants</a></li>
+        <li><a href="{% url 'books_by_category' 'actu-politique-et-societe' %}">Actualité politique et société</a></li>
+    </ul>
+</body>
+</html>

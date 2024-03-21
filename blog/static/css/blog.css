@@ -1,5 +1,5 @@
-.page-header {
-    background-color: #d64777;
+/*.page-header {
+    background-color: #23c8c0;
     margin-top: 0;
     margin-bottom: 40px;
     padding: 20px 20px 20px 40px;
@@ -59,12 +59,20 @@ h4 {
 
 .btn-default,
 .btn-default:visited {
-    color: #C25100;
+    color: #c93f74;
     background: none;
-    border-color: #C25100;
+    border-color: #150717;
 }
 
 .btn-default:hover {
     color: #FFFFFF;
-    background-color: #C25100;
+    background-color: #23de7d;
+}
+*/
+
+body{
+    background-image: url("{% static 'css/imageback.jpg' %}");
+    background-size: cover;
+    height: 100%;
+    background-position: center;
 }
