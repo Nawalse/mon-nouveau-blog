@@ -2,11 +2,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naoual's librairie</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <style>
+        .espace {
+        margin-bottom: 30px; /* ou toute autre valeur souhaitée */
+        }   
+        
         .page-header h1,
         .page-header h1 a,
         .page-header h1 a:visited,
@@ -17,10 +22,24 @@
             font-family: 'Viner Hand ITC' , cursive;
         }
 
-        h2,
-        h3,
-        h4 {
+        h2{
             font-family: 'Viner Hand ITC', cursive;
+            color: white;
+            text-align: center;
+            
+        }
+
+        h3 {
+            text-align: center; 
+            color: rgb(0, 0, 0);
+            font-family: 'Viner Hand ITC', cursive; 
+            font-weight: bold;
+        }
+        h5{
+            text-align: center; 
+            color: rgb(0, 0, 0); 
+            font-family: 'Viner Hand ITC', cursive;
+            font-weight: bold;
         }
         .date {
             color: #000000;
@@ -42,18 +61,21 @@
             background: url("https://media.istockphoto.com/id/528740830/fr/photo/le-beige-clair-parquet-la-texture-de-bois-larri%C3%A8re-plan.jpg?s=612x612&w=0&k=20&c=KzG0RENte3-3cAhtUDLQFJ03x4qOfSBKjVSHSpVSDuM=");
             background-size: cover;
             opacity: 0.6;
+            height: 100px;
+            display: flex;
+            align-items: center; 
         }
 
         .circle-container {
             display: flex;
             justify-content: center;
-            align-items: center; /* Centre les cercles verticalement */
+            align-items: center; 
             margin-bottom: 20px;
         }
 
         .circle {
-            width: 150px; /* Largeur augmentée */
-            height: 150px; /* Hauteur augmentée */
+            width: 150px; 
+            height: 150px; 
             background-color: hsla(0, 0%, 100%, 0.523);
             border-radius: 50%;
             display: flex;
@@ -63,27 +85,33 @@
         }
 
         .circle a {
-            color: rgb(0, 0, 0);
+            color: black;
             text-decoration: none;
-            text-align: center; /* Centre le texte horizontalement */
-            font-size: 18px; /* Taille de police ajustée */
-            font-weight: bold; /* Style de police en gras */
+            text-align: center; 
+            font-size: 18px; 
+            font-weight: bold; 
         }
 
-        h3 {
-            text-align: center; /* Centre le texte horizontalement */
-            color: white; /* Couleur du texte en blanc */
+
+
+        .addpost p {
+            color: rgb(229, 231, 91);
+            font-weight:bold;
+            font-size:20px;
         }
 
         footer {
-            background-color: #000000; /* Couleur de fond du footer */
-            color: white; /* Couleur du texte dans le footer */
-            text-align: center; /* Centre le texte dans le footer */
-            padding: 1px 0; /* Espacement interne du footer */
-            position: absolute; /* Position absolue pour s'assurer qu'il reste en bas */
-            width: 100%; /* Largeur de 100% */
-            bottom: 0; /* Aligner en bas */
+            background-color: #000000; 
+            color: rgb(255, 255, 255); 
+            text-align: center;
+            font-size: 16px;
+            padding: 10px 0; 
+            position: bottom; 
+            margin:0;
+            width: 100%; 
+            bottom: 0; 
             opacity: 0.8;
+            font-weight:bold;
         }
 
         .image-container {
@@ -93,22 +121,31 @@
         }
 
         .image-container img {
-            max-width: 550px;
+            max-width: 600px;
             opacity: 0.8;
+        }
+        .content-container{
+            margin-left: 60px;
+            margin-right: 60px;
+        }
+        .container{
+            margin-left: 60px;
+            margin-right: 60px;        
         }
     </style>
 </head>
 <body>
     <header class="page-header">
         <div class="container">
-            <h1>Naoual's librarie</h1>
+            <h1>Naoual's librairie</h1>
         </div>
     </header>
     <section>
-        <main class="content container">
+        <div class="espace"></div>
+        <main class="content-container">
             <div class="row">
                 <div class="col">
-                    <h3>Choisissez votre catégorie !</h3> 
+                    <h2>Choisissez votre catégorie !</h2> 
                     <div class="circle-container">
                         <div class="circle">
                             <a href="{% url 'books_by_category' 'histoire' %}">Histoire</a>
@@ -123,24 +160,55 @@
                             <a href="{% url 'books_by_category' 'actu-politique-et-societe' %}">Actualité politique et société</a>
                         </div>
                     </div>
+                    <div class="espace"></div>
                     <div class="image-container">
-                        <div class="text-center"> <!-- Centrer l'image -->
+                        <div class="text-center"> 
                             <h3>Prix des livres !</h3> 
-                            <img src="{% static 'statistiques_prix.png' %}" alt="Statistiques de prix" class="img-fluid"> <!-- Définir une largeur maximale pour l'image -->
+                            <img src="{% static 'statistiques_prix.png' %}" alt="Statistiques de prix" class="img-fluid">
                         </div>
-                        <div class="text-center"> <!-- Centrer l'image -->
-                            <h3>Histogrammes des livres !</h3> 
-                            <img src="{% static 'statistiques_hist.png' %}" alt="Histogrammes des livres" class="img-fluid"> <!-- Définir une largeur maximale pour l'image -->
-                        </div>
+                        <div class="text-center"> 
+                            <h3>Histogramme des livres !</h3> 
+                            <img src="{% static 'statistiques_hist.png' %}" alt="Histogrammes des livres" class="img-fluid"> 
+                        </div>                    
                     </div>
+                    <div class="espace"></div>
+                    <div class="espace"></div>
+                    <h2> Message du jour ! </h2>
+                        <h5>  Dans chaque livre, une nouvelle aventure commence, un nouveau monde s'ouvre, et une nouvelle réalité se révèle.</h5>
                 </div>
             </div>
         </main>
     </section>
-    <footer>
-        <div class="container">
+    <div class="espace"></div>
+    <div class="espace"></div>
+
+    <section>
+        <div class="addpost">
+            
+            <a href="{% url 'post_new' %}" class="top-menu">
+                <p> Ajouter un nouveau post + </p>
+            </a>
+        </div>
+        <main class="content-container2">
+            <div class="row">
+                <div class="col">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </main>
+
+    </section>
+
+
+
+
+   <footer>
+        <div class="container2">
             <p>&copy; 2024 Naoual's Librairie. Tous droits réservés.</p>
         </div>
     </footer>
+    </section>
+    </section>
 </body>
 </html>
