@@ -30,8 +30,6 @@
             float: right;
         }
 
-
-
         body{
             background: url("https://img.freepik.com/photos-premium/livre-bureau-stylo_664601-3833.jpg") no-repeat;
             background-size: cover;
@@ -40,18 +38,19 @@
             height: 100%;
         }
 
-
         .page-header {
             background: url("https://media.istockphoto.com/id/528740830/fr/photo/le-beige-clair-parquet-la-texture-de-bois-larri%C3%A8re-plan.jpg?s=612x612&w=0&k=20&c=KzG0RENte3-3cAhtUDLQFJ03x4qOfSBKjVSHSpVSDuM=");
             background-size: cover;
             opacity: 0.6;
         }
+
         .circle-container {
             display: flex;
             justify-content: center;
             align-items: center; /* Centre les cercles verticalement */
             margin-bottom: 20px;
         }
+
         .circle {
             width: 150px; /* Largeur augmentée */
             height: 150px; /* Hauteur augmentée */
@@ -62,6 +61,7 @@
             justify-content: center;
             margin-right: 20px;
         }
+
         .circle a {
             color: rgb(0, 0, 0);
             text-decoration: none;
@@ -69,10 +69,12 @@
             font-size: 18px; /* Taille de police ajustée */
             font-weight: bold; /* Style de police en gras */
         }
+
         h3 {
             text-align: center; /* Centre le texte horizontalement */
             color: white; /* Couleur du texte en blanc */
         }
+
         footer {
             background-color: #000000; /* Couleur de fond du footer */
             color: white; /* Couleur du texte dans le footer */
@@ -83,15 +85,21 @@
             bottom: 0; /* Aligner en bas */
             opacity: 0.8;
         }
+
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            max-width: 550px;
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
     <header class="page-header">
-    <!--  {% if user.is_authenticated %}
-        <a href="{% url 'post_new' %}" class="top-menu">
-            {% include './icons/file-earmark-plus.svg' %}
-        </a>
-        {% endif %} -->
         <div class="container">
             <h1>Naoual's librarie</h1>
         </div>
@@ -115,9 +123,15 @@
                             <a href="{% url 'books_by_category' 'actu-politique-et-societe' %}">Actualité politique et société</a>
                         </div>
                     </div>
-                    <h3>Prix des livres !</h3> 
-                    <div class="text-center"> <!-- Centrer l'image -->
-                        <img src="{% static 'statistiques_prix.png' %}" alt="Statistiques de prix" class="img-fluid" style="max-width: 600px;  opacity: 0.8;"> <!-- Définir une largeur maximale pour l'image -->
+                    <div class="image-container">
+                        <div class="text-center"> <!-- Centrer l'image -->
+                            <h3>Prix des livres !</h3> 
+                            <img src="{% static 'statistiques_prix.png' %}" alt="Statistiques de prix" class="img-fluid"> <!-- Définir une largeur maximale pour l'image -->
+                        </div>
+                        <div class="text-center"> <!-- Centrer l'image -->
+                            <h3>Histogrammes des livres !</h3> 
+                            <img src="{% static 'statistiques_hist.png' %}" alt="Histogrammes des livres" class="img-fluid"> <!-- Définir une largeur maximale pour l'image -->
+                        </div>
                     </div>
                 </div>
             </div>

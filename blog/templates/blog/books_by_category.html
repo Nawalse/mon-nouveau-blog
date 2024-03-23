@@ -1,16 +1,46 @@
 <!-- books_by_category.html -->
 
-
 {% block content %}
-<h1>{{ category }}</h1>
-<div class="books">
-    {% for book in books %}
-    <div class="book">
-        <img src="{{ book.image }}" alt="{{ book.name }}">
-        <h3>{{ book.name }}</h3>
-        <p>Prix: {{ book.price }} €</p>
-        <a href="{{ book.url }}">Plus d'info</a>
+<style>
+    body{
+        background-color: rgb(194, 178, 151);
+    }
+    .books {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .book {
+        width: calc(33.33% - 10px); /* Réglez la largeur pour afficher trois livres par ligne */
+        margin-bottom: 100px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    
+    .book img {
+        width: auto; /* Forcez la largeur de l'image à s'ajuster automatiquement */
+        height: 300px; /* Définissez une hauteur fixe pour les images */
+        object-fit: cover; /* Échellez les images pour remplir entièrement le conteneur sans déformer */
+        margin-bottom: 10px; /* Ajoutez un espacement en bas de l'image */
+    }
+
+
+</style>
+<body>
+    <h1>{{ category }}</h1>
+    <div class="books">
+        {% for book in books %}
+        <div class="book">
+            <img src="{{ book.image }}" alt="{{ book.name }}">
+            <h3>{{ book.name }}</h3>
+            <p>Prix: {{ book.price }} €</p>
+            <a href="{{ book.url }}">Plus d'info</a>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
-{% endblock %}
+    {% endblock %}
+
+</body>
+
