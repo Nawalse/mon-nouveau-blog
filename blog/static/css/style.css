@@ -4,30 +4,9 @@
     background-position: center;
 }*/
 
-body{
-    background: url("https://img.freepik.com/photos-premium/livre-bureau-stylo_664601-3833.jpg") no-repeat;
-    background-size: cover;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
 
 
-.page-header {
-    background: url("https://img.freepik.com/photos-premium/cartes-enveloppe-suite-mariage-pres-plantes-sechees-feuilles-palmier-herbe-pampa-vue-dessus-scene-boheme-cartes-papier-vierge-plat-maquette-cartes-mariage-place-pour-texte_202769-6630.jpg?size=626&ext=jpg");
-    background-size: cover;
-}
 
-.page-header h1,
-.page-header h1 a,
-.page-header h1 a:visited,
-.page-header h1 a:active {
-    color: #000000;
-    font-size: 42pt;
-    text-decoration: none;
-}
-
-h1,
 h2,
 h3,
 h4 {
